@@ -24,7 +24,7 @@ app.use(function(req, res, next) {
 
 app.use(express.json({ extended: false }));
 
-app.use('/', express.static(path.join(__dirname, '/build/')));
+app.use('/', express.static(path.join(__dirname, '/fold/')));
 app.use(require('./routes/Auth/login'));
 app.use(require('./routes/Auth/register'));
 app.use(require('./routes/Auth/forgot_password'));
@@ -41,5 +41,5 @@ app.listen(PORT, () => {
 });
 
 app.get('/', (req, res)=>{
-  res.sendFile(__dirname + '/build/index.html')
+  res.sendFile(__dirname + '/fold/index.html')
 })
