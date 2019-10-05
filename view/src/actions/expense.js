@@ -8,7 +8,7 @@ import {
 } from './types';
 import axios from 'axios';
 import moment from 'moment';
-const base_url = 'https://finance-tracker-server.herokuapp.com';
+const base_url = '';
 // const base_url = 'http://localhost:3500';
 
 export const getWeeklyExpense = userId => async dispatch => {

@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 require('./database/database');
 require('dotenv').config();
 
-app.use(cors({ origin: '*' }));
+app.use(cors());
 app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
 
@@ -21,7 +21,7 @@ app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
-app.options('*', cors());
+
 app.use(express.json({ extended: false }));
 
 app.use('/', express.static(path.join(__dirname, '/build/')));
