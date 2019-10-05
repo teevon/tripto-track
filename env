@@ -1,4 +1,0 @@
-DATABASEURL= mongodb+srv://tego:<9090909>@tegusman-qdomy.gcp.mongodb.net/admin?retryWrites=true&w=majority
-JWT_KEY=secret
-API_KEY=key-8a5c532d231070be36cf769c255400d7
-DOMAIN=sandbox7281f016e8aa4894bad82c9c3184112e.mailgun.org

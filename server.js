@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const path = require('path');
 const mongoose = require('mongoose');
 require('./database/database');
 require('dotenv').config();
@@ -23,6 +24,7 @@ app.use(function(req, res, next) {
 app.options('*', cors());
 app.use(express.json({ extended: false }));
 
+app.use('/', express.static(path.join(__dirname, '/build/')));
 app.use(require('./routes/Auth/login'));
 app.use(require('./routes/Auth/register'));
 app.use(require('./routes/Auth/forgot_password'));
@@ -37,3 +39,7 @@ const PORT = process.env.PORT || 3500;
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
+
+app.get('/', (req, res)=>{
+  res.sendFile(__dirname + '/build/index.html')
+})
